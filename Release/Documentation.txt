@@ -1,0 +1,118 @@
+========================================================================
+    XoGame Project Overview
+========================================================================
+
+XoGame application provides interface for XO game (or tic-tac-toe or (m,n)-game) in
+ human vs. human, human vs. AI and AI vs. AI modes. AI uses neural net for move selection.
+ Neural nets are trained using genetic algorithm (NOTE: TRAINING MODULE IS NOT IMPLEMENTED
+ YET!), where successive generations of AI brains play full-round tournaments and the
+ genetic recombination is based on the results via tournament selection.
+ (Reinforcement Learning would be better method for sure, based on the
+ performance shown by Google's AlphaGo program recently)
+
+Notes:
+ -- params.ini contains the parameters used by the neural net.
+ -- Training module (new training) is not yet implemented. Presently, the random
+    initialized untrained neural net AI doesn't perform any better than random
+    number generator. 
+ -- 'Eigen' linear algebra package is required to compile the project! 
+ 
+This file contains a summary of the modules and resuorce files
+
+//////////////////////////////////////////////////////////////////////////////
+Modules:
+
+Main.cpp
+	Main application source file
+	
+Game.cpp
+	This module handles the xo-game instance
+
+RenderGame.cpp
+	This module renders the board and game position for Game-module.
+
+AIBrain.cpp
+	This module handles AI decision making using neural nertwork.
+	The candidate move with highest ouput from neural network is chosen
+	
+	(Deep: All candidate moves are
+	evaluated using the associated neural net and the one with highest
+	output is selected.)
+
+NeuralNet.cpp
+	This module contains the methods for neural net calculations
+	(forward propagation).
+
+Training.cpp
+	This module is the controller for training process using genetic algorithms,
+	where successive generations of AI brains play full-round tournaments and the
+	genetic recombination is based on the results via tournament selection.
+
+Tournament.cpp
+	This module handles the full-round tournament for AI brains.
+
+GeneticAlgorithm.cpp
+	This module contains the methods for genetic algorithm.
+
+CParams.cpp
+	Class to hold all the parameters used in this project. The values
+	are loaded in from an ini file when an instance of the class is
+	created.
+
+utils.cpp
+	This module contains some useful auxiliary functions.
+
+
+//////////////////////////////////////////////////////////////////////////////////
+Other files:	
+
+XoGame.vcxproj
+    This is the main project file for VC++ projects generated using an Application Wizard.
+    It contains information about the version of Visual C++ that generated the file, and
+    information about the platforms, configurations, and project features selected with the
+    Application Wizard.
+
+XoGame.vcxproj.filters
+    This is the filters file for VC++ projects generated using an Application Wizard. 
+    It contains information about the association between the files in your project 
+    and the filters. This association is used in the IDE to show grouping of files with
+    similar extensions under a specific node (for e.g. ".cpp" files are associated with the
+    "Source Files" filter).
+
+XoGame.rc
+    This is a listing of all of the Microsoft Windows resources that the
+    program uses.  It includes the icons, bitmaps, and cursors that are stored
+    in the RES subdirectory.  This file can be directly edited in Microsoft
+    Visual C++.
+
+Resource.h
+    This is the standard header file, which defines new resource IDs.
+    Microsoft Visual C++ reads and updates this file.
+
+XoGame.ico
+    This is an icon file, which is used as the application's icon (32x32).
+    This icon is included by the main resource file XoGame.rc.
+
+small.ico
+    This is an icon file, which contains a smaller version (16x16)
+    of the application's icon. This icon is included by the main resource
+    file XoGame.rc.
+
+/////////////////////////////////////////////////////////////////////////////
+Other standard files:
+
+StdAfx.h, StdAfx.cpp
+    These files are used to build a precompiled header (PCH) file
+    named Circle2.pch and a precompiled types file named StdAfx.obj.
+
+/////////////////////////////////////////////////////////////////////////////
+Other notes:
+////////////////////////////////////////////////////////////////////////////
+
+TODO-list:
+
+-- Start implementing training module
+
+-- Implement tournament module
+
+/////////////////////////////////////////////////////////////////////////////

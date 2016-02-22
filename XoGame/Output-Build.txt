@@ -1,0 +1,9 @@
+﻿1>------ Build started: Project: XoBoard, Configuration: Debug Win32 ------
+1>  stdafx.cpp
+1>  main.cpp
+1>  Render.cpp
+1>  Game.cpp
+1>c:\users\matti\documents\stuff\programming\visual studio 2015\projects\xoboard\xoboard\game.cpp(21): warning C4804: '<': unsafe use of type 'bool' in operation
+1>  Generating Code...
+1>  XoBoard.vcxproj -> C:\Users\Matti\Documents\stuff\programming\Visual Studio 2015\Projects\XoBoard\Debug\XoBoard.exe
+========== Build: 1 succeeded, 0 failed, 0 up-to-date, 0 skipped ==========
